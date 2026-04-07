@@ -5,7 +5,7 @@ echo "**************************************************"
 
 echo "*** Installing Python 3.9 and Virtual Environment"
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.9 python3.9-venv
+sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y python3.9 python3.9-venv
 
 echo "*** Making Python 3.9 the default..."
 sudo update-alternatives --remove-all python3
@@ -25,7 +25,7 @@ echo "source ~/venv/bin/activate" >> ~/.bashrc
 
 echo "*** Installing Selenium and Chrome for BDD"
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y sqlite3 ca-certificates chromium-driver python3-selenium
+sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y sqlite3 ca-certificates chromium-driver python3-selenium
 
 echo "*** Installing Python depenencies..."
 source ~/venv/bin/activate && python3 -m pip install --upgrade pip wheel
